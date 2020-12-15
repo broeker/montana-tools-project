@@ -1,132 +1,61 @@
 ---
-title: Getting started
-date: 2020-11-20
+title: Project overview 
+date: 2020-12-09
 permalink: /
-toc: true
 eleventyNavigation:
   key: Home
-  title: Getting started
+  title: Project overview 
   order: 0
 ---
+The following pages provide a technical overview and relevant background information for the Montana calculator project. This is a React-based project running on Gatsby that uses AWS Lambda serverless (using Netlify functions) to generate filled PDF forms based on user input.
 
-Create your own spacebook exactly like this one and customize it to your needs. Spacebooks are speedy to set up, free, and 100% open source.
+![Home](/static/img/home_50.png)
 
-- **Easy to use** 😀 -- add a new page and it appears magically in your navigation
-- **Writing focused** ❤️ -- beautiful typography and a minimalist design managed with easy-to-use Markdown
-- **Speedy and accessible** 🚀 -- static files, responsive system fonts, minimal JavaScript, purge and minify All the Things, accessible to all people and devices
-- **Privacy first** 🔒 -- User-agent: \* Disallow: / is set by default with noreferrer set on all links; encrypt your full site with a password if desired
-- **Flexible** 💪 -- disable features you don't need, add advanced features with serverless functions or Alpine.js
+## Current project status
 
-Spacebooks are modern notebooks you can use to create documentation, sketch out new ideas, or whatever suits your fancy.
+**See:** [Montana Legal Help Tools](https://mlsa-tools.netlify.app/)
 
----
+The code, structure, and overall framework for the project is already in place and large portions of the project are already complete (including the entire frontend and a large portion of the PDF generation.) We need help to bring it to completion. 
 
-## Launch a new spacebook
+## Key components
 
-You can launch your own spacebook and deploy it to the cloud on Netlify with the click of a button. You'll need an existing [Github account](https://github.com/) and a [Netlify account](https://www.netlify.com/) (which you can create during this process if you wish): 
+As you review the above URL you will see there are numerous pages and components to the website, but the two key components we need assistance with are described below. 
 
-<div class="flex width-full  justify-center">
-<a class="bg-green-700 hover:bg-blue-600 text-white no-underline px-4 py-2 rounded" href="https://app.netlify.com/start/deploy?repository=https://github.com/broeker/spacebook">Deploy to Netlify!</a>
-</div>
+### 1. Child Support Calculator
 
-This process will automatically copy the spacebook repository to your own personal Github account. Once complete, your new spacebook will be automatically deployed on Netlify and ready for customization. 👍
+https://mlsa-tools.netlify.app/child-support
 
----
+This is the primary focus of the remaining work. The application is based on a previous website (see [key documents](/documents) for a link to the original) and is basically a clone of that existing application. The basic flow is as follows: 
 
-## What is a spacebook? 
+* **Introduction** -- the first 10 steps of the app are split out into a separate component and lead the user through a series of info pages and instructions. *[This work is complete]*
 
-A spacebook is a simple website generator that will help you create your own project just like this one using a bunch of super cool, modern, and fast technology:
+![Interview](/static/img/interview_50.png)
 
-- [Eleventy](https://www.11ty.io) a super fast Node-based static site generator that stays out of your way and lets you ship only what you want to ship 🚀
-- [Tailwind 2.0](https://tailwindcss.com/) a brilliant and tiny utility-first CSS framework 🎨
-- [Alpine.js](https://github.com/alpinejs/alpine) a minimal utility-first framework for simple or advanced JavaScript 🕹️
-- [Elasticlunr](http://elasticlunr.com/) a lightweight full-text search engine 🔍
-- [Advanced Markdown-it support](https://github.com/markdown-it/markdown-it) with footnotes, custom containers, emoji support, tables, task lists, and auto-linked images ✏️
-- [Netlify](https://www.netlify.com/) for cloud hosting and one-click installs, easy form support, and an automated [Github](https://github.com/) deployment pipepline 🤖
-- [Netlify CMS](https://www.netlify.com/) (optional) to provide an easy Markdown editor for creating and changing content with optional [Cloudinary support](https://cloudinary.com/) for advanced image management. 💻
+* **Interview** -- when a user clicks "*start interview*," they have to accept a terms of use, and  then begin a very long interview process that takes them through up to around 30 different conditional steps. (This means that the "steps" are dynamic based on the users responses, the number of children they have, how many jobs they have, etc.)
+  * Many individual steps also include conditional fields that respond based on input
+  * The fields also change whether a user selects to create BOTH documents, or only one of the documents. (Much of this is not yet complete, and most fields are showing throughout for dev and testing purposes.)
 
-Don't worry; you don't need to know or understand any of this to launch a spacebook but it results in a speedy, easy-to-use, and accessible website that typically scores 100s across the board on Google Lighthouse metrics for mobile and desktop:
- 
+![Interview](/static/img/interview2_50.png)
 
-![Performance](/static/img/spacebook.png)
+* **Generate docs** -- when the user finishes the interview, they get to a screen that lets them generate a PDF for download or print. (This is happening via a Netlify serverless function.) If necessary, a user can go back to any step in the process to fix information and then regenerate the docs for print or download.
 
-::: callout
-**Did you know?** If you enable the optional Netlify CMS or add an analytics script, you may lose 1-3 performance points but this is a pretty swell starting point. 👍
-:::
+![Generate](/static/img/generate_50.png)
 
-If you wish, you may customize your spacebook or use it as the basis for your creating your own starter. It was built on the [shoulders of giants](/credits).
+This is the portion of the project where we need assistance, along with any necessary fixes in the frontend interview UI logic if needed. 
 
----
+The basic code for PDF generation is in place, along with the initial fillable version of Worksheet A (this is currently complete through the SOLA section/Line 24 on Worksheet A.) To be completed are:
 
-## Who needs a spacebook?
+* Parenting days and annual child support portions of Worksheet A
+* Worksheet B (a required worksheet for some users based on responses)
+* Attachments (some responses, such as "other", require a blank attachment form. We do not yet have a template for this but can provide.)
 
-A spacebook is for anybody who believes in the [#indieweb](https://indieweb.org/) and wants a simple, modern, and free way to put a notebook-like thing on the web that they own and control:
+(See more specifics in [tasks](/tasks))
 
-- Writers and thinkers
-- Planners and dreamers
-- Technical doc writers
-- Project managers
-- Teachers and students
+### 2. Restitution Worksheet
+https://mlsa-tools.netlify.app/restitution
 
-Anybody who is willing to learn a few simple things can create as many spacebooks as they'd like for any reason in the world.
+This portion of the app shares the same tech stack and UI but it is an order of magnitude simpler. There are a lot less steps and conditionals, and only some very simple calculations. The front-end for this portion of the application is completely, but we do **NOT** yet have the fillable PDF that will be used to populate this data. We will provide this along with instructions for calculations. (These are mostly just adding up rows, etc.)
 
----
+Unlike the Child Support Calculator, this is a greenfield form that does not have a state-generated PDF form like Worksheet A as an equivalent. Instead, we will create a simple PDF layout to insert the data in a series of simple rows and columns. 
 
-## Install spacebook
-
-In theory, you can launch a spacebook without ever downloading the code or running your site locally. Just click that big green button and edit your files directly on Github! (The Github UI is fairly mobile friendly, and it is entirely possible to launch and manage a spacebook entirely via your phone :))  
-
-But if you want to customize your codebase or write your Markdown files in a local editor, you'll want to download and install your site locally.
-
-### Requirements
-
-You must be running **Node version 12 or higher** due to the Tailwind 2.0 release. I recommend using NVM to easily manage your Node versions if you need to switch back and forth between older versions.
-
-- [Node](https://nodejs.org/)
-- [NVM](https://github.com/nvm-sh/nvm) (optional)
-
-**To find your current node version:**
-
-```
-node --version
-```
-
-### Step one
-
-If already have a Github repository from a Netlify install, simply clone a copy of your new repository:
-
-```
-git clone https://github.com/<your-username>/<your-repository>
-```
-
-If you just want to try this out locally, you can clone the Spacebook repository directly:
-
-```
-git clone https://github.com/broeker/spacebook
-```
-
-_Note: You'll need to remove the existing .git file and add your own upstream repository if you want to use this as a basis for moving forward. You can also simply copy or [fork the repository](https://github.com/broeker/spacebook) directly from Github._
-
-### Step two
-
-Install the site and run an initial build command:
-
-```
-cd spacebook
-
-npm install
-
-npn run build (only necessary the first time!)
-```
-
-_If you get errors here, double check your node version!_
-
-### Step three
-
-Now spin up your local server to see your site!
-
-```
-npm run start
-```
-
-This command will start a local server and you'll be able to work on your site with hot reloads and some nice Browsersync features. If you install your site locally without connecting it to Netlify, you can easily do so later by moving your code into its own Github repository, and then creating a new Netlify site connected to that repository. 💥
+* We can provide more details as needed for an estimate
