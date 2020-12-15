@@ -19,7 +19,7 @@ The code, structure, and overall framework for the project is already in place a
 
 * The bulk of the remaining work can be completed by anybody with basic JavaScript skills and attention to detail
 * Some of the work (such as a potential solution for performance) may require a more advanced engineer
-* We have temporarily made the repository **public** so that you can clone a copy as your prepare your estimate (see [local setup](/setup) here.)
+* We have temporarily made the repository **public** so you can clone a copy as you prepare your estimate (see [local setup](/setup) here.)
 
 ## Key components
 
