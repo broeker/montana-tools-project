@@ -17,6 +17,10 @@ The following pages provide a technical overview and relevant background informa
 
 The code, structure, and overall framework for the project is already in place and large portions of the project are already complete (including the entire frontend and a large portion of the PDF generation.) We need help to bring it to completion. 
 
+* The bulk of the remaining work can be completed by anybody with basic JavaScript skills and attention to detail
+* Some of the work (such as a potential solution for performance) may require a more advanced engineer
+* We have temporarily made the repository **public** so that you can clone a copy as your prepare your estimate (see [local setup](/setup) here.)
+
 ## Key components
 
 As you review the above URL you will see there are numerous pages and components to the website, but the two key components we need assistance with are described below. 
@@ -58,4 +62,5 @@ This portion of the app shares the same tech stack and UI but it is an order of 
 
 Unlike the Child Support Calculator, this is a greenfield form that does not have a state-generated PDF form like Worksheet A as an equivalent. Instead, we will create a simple PDF layout to insert the data in a series of simple rows and columns. 
 
-* We can provide more details as needed for an estimate
+* For now, you can estimate only the Child Support Calculator
+* We will provide more details as needed for an estimate 
