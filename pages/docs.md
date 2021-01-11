@@ -35,6 +35,8 @@ These are the relevant Montana child support forms and documentation in PDF form
 
 * [Financial Affadavit Form](https://dphhs.mt.gov/Portals/85/csed/documents/financialaffidavit.pdf) -- this is a direct link to the Financial Affadivit doc for tha t portion of the calculator. 
 
+* [Example of Completed Form from current tool](https://drive.google.com/file/d/1-ujR5gCvx9IBF3jFh37aKM2ajtj1yAAu/view?usp=sharing) -- this is an example of a fully completed form from the existing HotDocs site that shows both "Attachments" and Worksheet B.
+
 
 ## Other docs
 
