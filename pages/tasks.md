@@ -11,7 +11,7 @@ This outlines the high-level tasks we need completed. We can provide individual 
 
 
 ## Overview 
-* Finish the rest of the logic and processors for Worksheet A pdf generation -- Worksheet is mostly complete
+* Finish the rest of the logic and processors for Worksheet A pdf generation -- Worksheet A is about 80% complete. We will need your help finishing the fillable PDF forms. 
 * Start and finish the worksheet logic and processors for optional Worksheet B
 * Start and finish the worksheet logic for "attachments" (used to expand answers that require an "other")
 * Start and create logic and processors for the financial affadavit form [form](https://dphhs.mt.gov/Portals/85/csed/documents/financialaffidavit.pdf) in Acrobat so that it can be used for generating a PDF in functions/pdf-gen
