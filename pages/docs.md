@@ -40,6 +40,9 @@ These are the relevant Montana child support forms and documentation in PDF form
 
 ## Other docs
 
+* [Calculator Limits](https://docs.google.com/spreadsheets/d/18YgS7KSY4mNo1hsvFraWrPjn6xhk3_5faFAMOaAJuqU/edit?usp=sharing) -- this documents sets agreed upon limits to each of the 
+repeating elements throughout the calculator.
+
 * [MT Online Calculators Text Edits](https://docs.google.com/spreadsheets/d/1IrZc_PDgFtfsX_L9FEs93Zu4wFKvWzmu8vMzrAc1Kmk/edit?usp=sharing) -- this is a client-facing doc where they were originally submitting text changes and feature requests. Many but not all of these are complete, but some are open issues that may need additional client feedback. EC will finish curating this list and create new tasks as necessary.
 
 * [Original discovery doc](https://docs.google.com/document/d/1vQzoOqLfnKrDjS_Yw8ZAISVgVwsozhMgekUZcHHhmz8/edit?usp=sharing) -- this is the original tech discovery doc with links to meeting notes and other historical docs (probably not relevant moving forward.)
