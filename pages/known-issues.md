@@ -9,6 +9,15 @@ eleventyNavigation:
 ---
 This is a list of known issues we uncovered during our last round of updates and fixes.
 
+## Duplicate IDs (Radios)
+
+After an upgrade to Chakra v1.x we started seeing a large amount of console errors for duplicate IDs on radio buttons on the first page load. We have done some initial debugging, but so far cannot solve. It seems that it only happens when FieldRadio is wrapped inside of a FormGroup. See components/Fields/FieldRadio and components/Utils/FormGroup. We posted our results to the Chakra issue queue here, but so far no resposnes:
+
+https://github.com/chakra-ui/chakra-ui/issues/3074
+
+So far, the app seems to run fine with this error but we are hoping this will be fixed/addressed by Chakra at some point.
+
+
 ## Money formatting
 
 During initial dev we never finalized how to handle money formatting+calculations. Currently, there are versions of the following functions scattered in the 4 processor files:
