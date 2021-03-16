@@ -27,13 +27,13 @@ const init = require('./init.json')
 form = init
 ```
 
-Normally, the processor will accept **form** data instead. 
+Normally in the real app, the processor will accept **form** data from calculator.js instead. 
 
-See the video above as to why we are doing this work-around for now, instead of just passing the prepopulated form video.
+See the video above as to why we are doing this work-around for now, instead of just passing the prepopulated form.
 
 ## /src/pages/child-support/calculator.js
 
-We also are passing init.json to the form to prepopulate it. 
+For testing purposes, we also are passing **init.json** to the form to prepopulate it. 
 
 ```
 import * as init from '../../../functions/pdf-gen/processors/init.json';
@@ -41,9 +41,9 @@ import * as init from '../../../functions/pdf-gen/processors/init.json';
       initialValues={ values }
 ```
 
-However, as noted in the video above, this is not entirely functional because the form will NOT pick up data until the form field is visible. Because we are handling visibility using React state, many of the fields are hidden and do not get re-populated until you manually trigger the field. 
+However, as noted in the video above, this is not entirely functional because the form will NOT pick up data until the form field is visible. Because we are handling field visibility using React state, many of the fields are hidden and do not get re-populated until you manually trigger the field (e.g. change from "yes" to "no" and back). 
 
-For the first several steps, we manually checked this by checking the initialValues form value in addition to the state, for example:
+For the first several steps of the app, we fixed this by checking the initialValues form value in addition to the state, for example:
 
 **InitiateInterview.js**
 
@@ -66,5 +66,5 @@ Then add an additional OR clause checking for the existing state OR the form val
       fieldWidth={"10rem"}
       />
 ```
+We didn't complete this effort throughout the app because it isn't clear if it will ultimately help development go faster, and some of the fields/pages (e.g. multiple checkboxes) may get a bit complicated.
 
-This will take some time to do for the rest of the forms so for now I have only completed it through the first few steps as a proof-of-concept.
